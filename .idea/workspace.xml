@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b37c152-ed17-4916-adf7-4bb336e7c325" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/PROYECTO 8 - CARLY.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +17,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;CarlyBrito&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:CarlyBrito/PROYECTO-8---CARLY.git&quot;,
+    &quot;accountId&quot;: &quot;c4886ff0-dd61-4d4a-86aa-353747a7afda&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -38,25 +44,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for main.test_urban_routes.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_main.TestUrbanRoutes.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_main.TestUrbanRoutes.test_add_card.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_main.TestUrbanRoutes.test_confirm_taxi_request.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_main.TestUrbanRoutes.test_fiel_phone.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_main.TestUrbanRoutes.test_select_tariff_comfort.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_main.TestUrbanRoutes.test_urban_routes.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_main.test_urban_routes.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in main.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.activate_this.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for main.test_urban_routes.executor": "Run",
+    "Python tests.Python tests for test_main.TestUrbanRoutes.executor": "Run",
+    "Python tests.Python tests for test_main.TestUrbanRoutes.test_add_card.executor": "Run",
+    "Python tests.Python tests for test_main.TestUrbanRoutes.test_click_for_taxi_modal.executor": "Debug",
+    "Python tests.Python tests for test_main.TestUrbanRoutes.test_confirm_taxi_request.executor": "Run",
+    "Python tests.Python tests for test_main.TestUrbanRoutes.test_fiel_phone.executor": "Run",
+    "Python tests.Python tests for test_main.TestUrbanRoutes.test_select_tariff_comfort.executor": "Run",
+    "Python tests.Python tests for test_main.TestUrbanRoutes.test_urban_routes.executor": "Run",
+    "Python tests.Python tests for test_main.test_urban_routes.executor": "Run",
+    "Python tests.Python tests in main.py.executor": "Run",
+    "Python.activate_this.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.editor"
   }
-}</component>
-  <component name="RunManager" selected="Python tests.Python tests for test_main.TestUrbanRoutes.test_confirm_taxi_request">
+}]]></component>
+  <component name="RunManager" selected="Python tests.Python tests for test_main.TestUrbanRoutes.test_click_for_taxi_modal">
     <configuration name="Python tests for test_main.TestUrbanRoutes.test_add_card" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PROYECTO 8 - CARLY" />
       <option name="ENV_FILES" value="" />
@@ -67,8 +75,24 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_main.TestUrbanRoutes.test_add_card&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_main.TestUrbanRoutes.test_click_for_taxi_modal" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PROYECTO 8 - CARLY" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_main.TestUrbanRoutes.test_click_for_taxi_modal&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -82,6 +106,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_main.TestUrbanRoutes.test_confirm_taxi_request&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
@@ -97,6 +122,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_main.TestUrbanRoutes.test_fiel_phone&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
@@ -112,33 +138,19 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_main.TestUrbanRoutes.test_select_tariff_comfort&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_main.TestUrbanRoutes.test_urban_routes" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="PROYECTO 8 - CARLY" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_main.TestUrbanRoutes.test_urban_routes&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_main.TestUrbanRoutes.test_click_for_taxi_modal" />
         <item itemvalue="Python tests.Python tests for test_main.TestUrbanRoutes.test_confirm_taxi_request" />
         <item itemvalue="Python tests.Python tests for test_main.TestUrbanRoutes.test_add_card" />
         <item itemvalue="Python tests.Python tests for test_main.TestUrbanRoutes.test_fiel_phone" />
         <item itemvalue="Python tests.Python tests for test_main.TestUrbanRoutes.test_select_tariff_comfort" />
-        <item itemvalue="Python tests.Python tests for test_main.TestUrbanRoutes.test_urban_routes" />
       </list>
     </recent_temporary>
   </component>
@@ -157,6 +169,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721959051089</updated>
+      <workItem from="1724819160058" duration="5000" />
     </task>
     <servers />
   </component>

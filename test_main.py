@@ -1,5 +1,6 @@
 import time
 import json
+import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -50,7 +51,7 @@ class UrbanRoutesPage:
     comfort_fare_button = (By.XPATH, "//div[@class='tcard-title' and text()='Comfort']")
     phone_input_box = (By.CLASS_NAME, "np-button")
     phone_popup_window_input_box = (By.ID, "phone")
-    phone_popup_window_input_box_next = (By.XPATH, "(//button[@type='submit'])[1]")
+    phone_popup_window_input_box_next = (By.CSS_SELECTOR, ".button.full")
     code_field = (By.ID, "code")
     code_confirm_button = (By.XPATH, "(//button[@type='submit'])[2]")
     payment_method_box = (By.XPATH, "//*[@id='root']/div/div[3]/div[3]/div[2]/div[2]/div[2]/div[2]")
@@ -78,6 +79,7 @@ class UrbanRoutesPage:
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.from_field))
         self.driver.find_element(*self.from_field).send_keys(from_address)
 
+
     def set_to(self, to_address):
         # Establece la dirección de 'Hasta' en el campo correspondiente
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.to_field))
@@ -101,13 +103,14 @@ class UrbanRoutesPage:
         # Selecciona la tarifa 'Comfort'
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.comfort_fare_button))
         self.driver.find_element(*self.comfort_fare_button).click()
+        selected_fare_element = self.driver.find_element(By.XPATH, "//div[@class='tcard-title' and text()='Comfort']")
+        assert selected_fare_element.text == "Comfort"
 
     def select_phone_number_field(self):
         # Espera a que la ventana emergente esté visible
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.phone_input_box))
         # Haz clic en el campo de entrada para asegurarte de que esté seleccionado
         self.driver.find_element(*self.phone_input_box).click()
-
     def enter_phone_number(self, phone_number):
         # Ingresa el número de teléfono en la ventana emergente
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.phone_popup_window_input_box))
@@ -172,51 +175,87 @@ class TestUrbanRoutes:
     @classmethod
     def setup_class(cls):
         # Configura el entorno de prueba, incluyendo las capacidades del navegador
+        from selenium import webdriver
         from selenium.webdriver import DesiredCapabilities
         capabilities = DesiredCapabilities.CHROME
         capabilities["goog:loggingPrefs"] = {'performance': 'ALL'}
         cls.driver = webdriver.Chrome()
+        cls.driver.maximize_window()
+        cls.driver.get(data.urban_routes_url)
+        cls.routes_page = UrbanRoutesPage(cls.driver)
 
-    def test_complete_taxi_booking(self):
-        # Prueba completa que simula el proceso de reserva de un taxi
-        self.driver.get(data.urban_routes_url)
-        routes_page = UrbanRoutesPage(self.driver)
+    def test_set_route(self):
+        # Establecer dirección desde y hasta
+        self.routes_page.set_route(data.address_from, data.address_to)
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
-        # Establecer dirección
-        routes_page.set_route(data.address_from, data.address_to)
-
+    def test_click_book_a_taxi_button(self):
         # Pedir taxi
-        routes_page.click_book_a_taxi_button()
+        self.routes_page.click_book_a_taxi_button()
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
+    def test_select_comfort_fare(self):
         # Seleccionar tarifa Comfort
-        routes_page.select_comfort_fare()
+        self.routes_page.select_comfort_fare()
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
+    def test_select_phone_number_field(self):
         # Seleccionar número de teléfono
-        routes_page.select_phone_number_field()
+        self.routes_page.select_phone_number_field()
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
+    def test_enter_phone_number(self):
         # Ingresar número de teléfono
-        routes_page.enter_phone_number(data.phone_number)
+        self.routes_page.enter_phone_number(data.phone_number)
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
+    def test_code_confirm_button(self):
         # Recuperar e ingresar código de confirmación
         confirmation_code = retrieve_phone_code(self.driver)
-        routes_page.driver.find_element(By.ID, 'code').send_keys(confirmation_code)
-        routes_page.driver.find_element(*routes_page.code_confirm_button).click()
+        self.routes_page.driver.find_element(By.ID, 'code').send_keys(confirmation_code)
+        self.routes_page.driver.find_element(*self.routes_page.code_confirm_button).click()
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
+    def test_add_payment_method(self):
         # Agregar tarjeta de crédito
-        routes_page.add_payment_method(data.card_number, data.card_code)
+        self.routes_page.add_payment_method(data.card_number, data.card_code)
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
+    def test_exit_payment_popup(self):
         # Salir de la ventana emergente de método de pago
-        routes_page.exit_payment_popup()
+        self.routes_page.exit_payment_popup()
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
+    def test_message_to_driver(self):
         # Enviar mensaje al conductor
-        routes_page.message_to_driver("Hola, coloca musica")
+        self.routes_page.message_to_driver("Hola, coloca musica")
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
+    def test_select_blanket_and_scarves(self):
         # Seleccionar requisitos del viaje
-        routes_page.select_blanket_and_scarves()
-        routes_page.select_two_ice_creams()
+        self.routes_page.select_blanket_and_scarves()
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
+    def test_select_two_ice_creams(self):
+        self.routes_page.select_two_ice_creams()
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
+
+    def test_click_for_taxi_modal(self):
         # Seleccionar el botón para pedir un taxi
-        routes_page.click_for_taxi_modal()
+        self.routes_page.click_for_taxi_modal()
+        response = requests.get(data.urban_routes_url)
+        assert response.status_code == 200
 
     @classmethod
     def teardown_class(cls):
